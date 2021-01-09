@@ -1,22 +1,26 @@
 import React from 'react'
 import CreateButton from './CreateButton'
-import QuestionCard from './QuestionCard'
+import QuestionCardPage from '../pages/QuestionCardPage'
 import '../App.css';
-import TempCards from "../data/tempCards";
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch,
+    Link
+ } from "react-router-dom";
+
+
 
 export default function Body() {
     let componentSelect = 1; // manually change in code (for development)
     let displayComponent;
 
-    console.log(TempCards);
+    
 
     if (componentSelect === 0) {
         displayComponent = <CreateButton />
     } else if (componentSelect === 1) {
-        displayComponent = <div>
-            {TempCards.map(card => (<QuestionCard Title={card.title} Description={card.description} />)
-            )}
-        </div>;
+        displayComponent = <QuestionCardPage/>
     }
 
     return (

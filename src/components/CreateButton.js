@@ -9,7 +9,7 @@ export default function CreateButton() {
     }
 
     return (
-        <div>
+        <div className= "CreateButton">
             <Button style={buttonStyle}>Create new question set</Button>
         </div>
     )
