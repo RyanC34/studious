@@ -57,3 +57,8 @@
 .CreateButton{
   padding-bottom: 10%;
 }
+
+.logoLink {
+  color: inherit;
+  text-decoration: inherit;
+}
