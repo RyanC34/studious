@@ -1,9 +1,15 @@
 import React from 'react'
 import {Text} from '@geist-ui/react'
-function PracticePage() {
+function PracticePage(props) {
+    let {
+        cardTitle,
+        cardDesc
+    } = props
+
     return (
         <div>
-            <Text>PracticePage</Text>
+            <Text h1>{cardTitle}</Text>
+            <Text h4>{cardDesc}</Text>
         </div>
     )
 }

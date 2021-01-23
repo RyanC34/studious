@@ -4,10 +4,11 @@ import QuestionCard from '../components/QuestionCard'
 import '../App.css';
 import { Grid } from '@geist-ui/react';
 import CreateButton from "../components/CreateButton"
-function QuestionCardPage() {
-    // state that tracks the title of card has been clicked
-    const[clickedTitle, setClickedTitle] = useState("")
-    
+function QuestionCardPage(props) {
+    let {
+        changeSelectedCard,
+        changeSelectedCardDesc
+    } = props
     return (
         <div>
             <CreateButton/>
@@ -16,12 +17,14 @@ function QuestionCardPage() {
                 {TempCards.map(card => (
                         <Grid>
                             <QuestionCard Title={card.title} Description={card.description} editButtonHandler={() => {
-                                setClickedTitle(card.title)
+                                changeSelectedCard(card.title)
+                                changeSelectedCardDesc(card.description)
                             }}/>
                         </Grid>
                     )
                 )}
             </Grid.Container>
+
         </div>
       
     )

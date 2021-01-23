@@ -18,6 +18,7 @@ export default function Body() {
     let componentSelect = 1; // manually change in code (for development)
     let displayComponent;
     const [selectedTitle, setSelectedTitle] = useState("")
+    const [selectedDesc, setSelectedDesc] = useState("")
 
     if (componentSelect === 0) {
         displayComponent = <CreateButton />
@@ -29,11 +30,15 @@ export default function Body() {
         <div className="Body">
             <Switch>
                 <Route path="/practice">
-                    <PracticePage cardTitle={selectedTitle}/>
+                    <PracticePage cardTitle={selectedTitle} cardDesc={selectedDesc}/>
                 </Route>
                 <Route path="/">
-                    <QuestionCardPage changeSelectedCard={(cardTitle) => {
+                    <QuestionCardPage 
+                    changeSelectedCard={(cardTitle) => {
                         setSelectedTitle(cardTitle)
+                    }}
+                    changeSelectedCardDesc={(cardDesc) => {
+                        setSelectedDesc(cardDesc)
                     }}/>
                 </Route>
             </Switch>
