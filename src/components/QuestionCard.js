@@ -5,15 +5,17 @@ import {
     Redirect
  } from "react-router-dom";
 export default function QuestionCard(props) {
-    const [redirecting, setRedirecting] = useState(false)
+    const [redirectingToPractice, setRedirectingToPractice] = useState(false)
+    const [redirectingToEdit, setRedirectingToEdit] = useState(false)
     let {
-        Title, Description, Score, editButtonHandler
+        Title, Description, Score, practiceButtonHandler, editButtonHandler
     } = props;
 
     function goToPractice(){
-        setRedirecting(true)
-        editButtonHandler()
+        setRedirectingToPractice(true)
+        practiceButtonHandler()
     }
+
 
     return (
         <div>
@@ -23,10 +25,14 @@ export default function QuestionCard(props) {
                     <Fieldset.Footer>
                         <Fieldset.Footer.Actions>
                             <Button auto size="mini" onClick = {goToPractice}>practice</Button>
-                            <Button auto size="mini">edit</Button>
+                            <Button auto size="mini" onClick = {() => {
+                                setRedirectingToEdit(true)
+                                editButtonHandler()
+                                }}>edit</Button>
                         </Fieldset.Footer.Actions>
                     </Fieldset.Footer>
-                    {redirecting ? <Redirect to="/practice"/> : null}
+                    {redirectingToPractice ? <Redirect to="/practice"/> : null}
+                    {redirectingToEdit ? <Redirect to="/edit"/> : null}
                     {/*
                         ternary operator (?)
 

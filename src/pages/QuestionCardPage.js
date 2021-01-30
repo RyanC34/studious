@@ -12,11 +12,14 @@ function QuestionCardPage(props) {
     return (
         <div>
             <CreateButton/>
-            
             <Grid.Container gap={2} justify = "center">
                 {TempCards.map(card => (
                         <Grid>
-                            <QuestionCard Title={card.title} Description={card.description} editButtonHandler={() => {
+                            <QuestionCard Title={card.title} Description={card.description} editButtonHandler = {() => {
+                                changeSelectedCard(card.title)
+                                changeSelectedCardDesc(card.description)
+                            }} 
+                            practiceButtonHandler={() => {
                                 changeSelectedCard(card.title)
                                 changeSelectedCardDesc(card.description)
                             }}/>

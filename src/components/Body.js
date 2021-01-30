@@ -9,6 +9,7 @@ import {
     Link
  } from "react-router-dom";
 import PracticePage from '../pages/PracticePage';
+import EditPage from '../pages/EditPage';
 
 
 
@@ -31,6 +32,9 @@ export default function Body() {
             <Switch>
                 <Route path="/practice">
                     <PracticePage cardTitle={selectedTitle} cardDesc={selectedDesc}/>
+                </Route>
+                <Route path="/edit">
+                    <EditPage cardTitle={selectedTitle} cardDesc={selectedDesc}/>
                 </Route>
                 <Route path="/">
                     <QuestionCardPage 
