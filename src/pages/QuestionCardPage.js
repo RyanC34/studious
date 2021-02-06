@@ -7,7 +7,8 @@ import CreateButton from "../components/CreateButton"
 function QuestionCardPage(props) {
     let {
         changeSelectedCard,
-        changeSelectedCardDesc
+        changeSelectedCardDesc,
+        changeId
     } = props
     return (
         <div>
@@ -18,10 +19,12 @@ function QuestionCardPage(props) {
                             <QuestionCard Title={card.title} Description={card.description} editButtonHandler = {() => {
                                 changeSelectedCard(card.title)
                                 changeSelectedCardDesc(card.description)
+                                changeId(card.id)
                             }} 
                             practiceButtonHandler={() => {
                                 changeSelectedCard(card.title)
                                 changeSelectedCardDesc(card.description)
+                                changeId(card.id)
                             }}/>
                         </Grid>
                     )

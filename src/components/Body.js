@@ -20,6 +20,7 @@ export default function Body() {
     let displayComponent;
     const [selectedTitle, setSelectedTitle] = useState("")
     const [selectedDesc, setSelectedDesc] = useState("")
+    const [id, setId] = useState(0)
 
     if (componentSelect === 0) {
         displayComponent = <CreateButton />
@@ -34,7 +35,7 @@ export default function Body() {
                     <PracticePage cardTitle={selectedTitle} cardDesc={selectedDesc}/>
                 </Route>
                 <Route path="/edit">
-                    <EditPage cardTitle={selectedTitle} cardDesc={selectedDesc}/>
+                    <EditPage cardTitle={selectedTitle} cardDesc={selectedDesc} id={id}/>
                 </Route>
                 <Route path="/">
                     <QuestionCardPage 
@@ -43,7 +44,12 @@ export default function Body() {
                     }}
                     changeSelectedCardDesc={(cardDesc) => {
                         setSelectedDesc(cardDesc)
-                    }}/>
+                    }}
+                    changeId={(id) => {
+                        setId(id)
+                    }}
+                    />
+
                 </Route>
             </Switch>
         </div>
