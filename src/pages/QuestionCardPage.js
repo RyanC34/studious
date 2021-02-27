@@ -10,6 +10,7 @@ function QuestionCardPage(props) {
         changeSelectedCardDesc,
         changeId
     } = props
+
     return (
         <div>
             
