@@ -18,3 +18,40 @@ export default function Header() {
         </div>
     )
 }
+
+
+/*
+function Parent() {
+    const [randomState, setRandomState] = useState(0)
+
+    return (
+        <div>
+            <Child importantNumber={randomState}/>
+            <Grandchild importantNumber={randomState} />
+            <Nephew importantNumber={randomState} />
+        </div>
+    )
+}
+----------------another page------------------
+function Child(props) {
+    return (
+        <Text h1>{props.importantNumber}</Text>
+    )
+}
+
+function Grandchild(props) {
+    let {
+        importantNumber
+    } = props;
+
+    return (
+        <Link>{importantNumber}</Link>
+    )
+}
+
+function Nephew({ importantNumber }) {
+    return (
+        <Text h1>{importantNumber}</Text>
+    )
+}
+*/
